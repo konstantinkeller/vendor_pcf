@@ -1,0 +1,35 @@
+#!/system/bin/sh
+# PrimeDirective, Sonicxml, DHO, Nuclearmistake
+# With inspiration from DroidTh3ory
+
+sync
+sysrw
+
+
+#
+# Enable Sysctl Tweaks
+#
+sysctl -p /system/etc/sysctl.conf
+
+
+busybox rm -f /cache/*.apk
+busybox rm -f /cache/*.tmp
+busybox rm -f /data/dalvik-cache/*.apk
+busybox rm -f /data/dalvik-cache/*.tmp
+
+#
+# Set SD Card Cache
+#
+if [ -e /sys/devices/virtual/bdi/179:0/read_ahead_kb ]; then
+echo 2048 > /sys/devices/virtual/bdi/179:0/read_ahead_kb
+fi
+
+# Vibration
+echo 1498 > /sys/vibe/pwmduty
+
+#
+# File System Tweaks & Cleanup
+#
+echo "10" > /proc/sys/fs/lease-break-time
+
+
