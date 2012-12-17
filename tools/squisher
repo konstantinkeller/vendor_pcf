@@ -5,7 +5,7 @@
 # cyanogen
 # AOSP - PCF
 
-. $ANDROID_BUILD_TOP/vendor/aosp/tools/colors
+. $ANDROID_BUILD_TOP/vendor/pcf/tools/colors
 
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]
@@ -38,7 +38,7 @@ if [ ! -f "$OTAPACKAGE" ]; then
 	exit 1
 fi
 
-OPTICHARGER=$ANDROID_BUILD_TOP/vendor/aosp/tools/opticharger
+OPTICHARGER=$ANDROID_BUILD_TOP/vendor/pcf/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 
