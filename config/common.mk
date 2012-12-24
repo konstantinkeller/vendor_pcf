@@ -5,7 +5,7 @@ PRODUCT_DEVICE := generic
 
 # Build Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.pcf.version=$(TARGET_PRODUCT)_001_$(shell date +"%m-%d-%Y")
+    ro.pcf.version=$(TARGET_PRODUCT)_004_$(shell date +"%m-%d-%Y")
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/pcf/overlay/common
 
